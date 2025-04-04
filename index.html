@@ -43,7 +43,7 @@
             top: 0;
             left: 0;
             box-shadow: 2px 3px 20px black, 0 0 50px #8f5922 inset;
-            background: #fffef0;
+            background: hsl(var(--random-hue), 69.6%, 40%);;
             /* v2.1 : borders effect with SVG : try to play with scale to change them */
             filter: url(#wavy2);
             /* v2.2 : Noise added for a vellum paper effect */
@@ -51,11 +51,11 @@
         }
 
         .parchment h3 {
-            color: #8f5922;
+            color: #211f22;;
             z-index: 99;
             margin: 0;
             padding: 1em 0 1em 0;
-            text-shadow: 0 0 5px #8f5922;
+            text-shadow: 0 0 5px #a9a9a9;;
         }
     </style>
 </head>
@@ -74,6 +74,7 @@
         </section>
         <section id="result" class="container align-center" style="display:none;">
             <article class="parchment">
+                <img src="media/totem.png" alt="">
                 <h3 id="tribu-name" class="potta-one-regular"></h3>
             </article>
             <p>Merci Denis !</p>
@@ -93,7 +94,6 @@
     </svg>
 
     <script>
-
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -159,6 +159,10 @@
 
             document.getElementById('tribu-name').innerText = tribuName;
             document.getElementById('result').style.display = 'block';
+
+            // Change the hue of the background color randomly
+            document.documentElement.style.setProperty('--random-hue', Math.floor(Math.random() * 360));
+
         });
     </script>
 </body>
